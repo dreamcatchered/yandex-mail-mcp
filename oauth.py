@@ -49,11 +49,11 @@ def const_eq(a: str, b: str) -> bool:
 
 
 def remote_ip() -> str:
-    """IP вошедшего. X-Real-IP ставит Cloudflare Tunnel ($remote_addr), его не подделать."""
+    """IP вошедшего. X-Real-IP ставит обратный прокси из $remote_addr, его не подделать."""
     forwarded = request.headers.get("X-Forwarded-For", "").split(",")[0].strip()
     return (
-        request.headers.get("CF-Connecting-IP")
-        or request.headers.get("X-Real-IP")
+        request.headers.get("X-Real-IP")
+        or request.headers.get("CF-Connecting-IP")
         or forwarded
         or request.remote_addr
         or "?"
