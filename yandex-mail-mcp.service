@@ -1,0 +1,25 @@
+[Unit]
+Description=yandex-mail-mcp — сервер MCP для Яндекс Почты (коннектор ChatGPT)
+Documentation=https://github.com/your-user/yandex-mail-mcp
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/yandex-mail-mcp
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 /opt/yandex-mail-mcp/app.py
+Restart=always
+RestartSec=5s
+
+# Приложение читает почту и пишет только в свой каталог.
+# MemoryMax — страховка: в простое сервис занимает ~35 МБ.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/opt/yandex-mail-mcp
+MemoryMax=180M
+
+[Install]
+WantedBy=multi-user.target

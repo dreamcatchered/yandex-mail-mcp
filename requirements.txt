@@ -1,0 +1,2 @@
+# единственная зависимость — Flask; IMAP/SMTP/Crypto в stdlib
+Flask>=3.0,<4

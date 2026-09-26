@@ -1,0 +1,12 @@
+{
+  "access_code": "ЗАМЕНИ_НА_СВОЙ_КОД_ДОСТУПА",
+  "port": 5180,
+  "public_url": "https://yandex-mail-mcp.example.com",
+  "address": "your-mailbox@yandex.ru",
+  "app_password": "ЗАМЕНИ_НА_ПАРОЛЬ_ПРИЛОЖЕНИЯ",
+  "imap_host": "imap.yandex.ru",
+  "imap_port": 993,
+  "smtp_host": "smtp.yandex.ru",
+  "smtp_port": 465,
+  "oauth_clients": []
+}
